@@ -1,19 +1,29 @@
 # Finlyzer
 
-Finlyzer is a local-first Electron desktop app for reconciling personal or small-business cashflow across Alipay, WeChat, and supported bank exports. It keeps the workflow centered on one transaction table: import, classify, inspect mirrors, review accruals, and run chart analysis without sending data to a server.
+Finlyzer is a local-first Electron desktop app for reconciling personal or
+small-business cashflow across Alipay, WeChat, and supported bank exports. It
+keeps the workflow centered on one transaction table: import, classify, inspect
+mirrors, review accruals, and run chart analysis without sending data to a
+server.
 
 Current production version: `1.0.0`
 
 ## What It Does
 
-- Imports Alipay and WeChat CSV statements plus supported bank statement workbooks.
+- Imports Alipay and WeChat CSV statements plus supported bank statement
+  workbooks.
 - Detects source format automatically during import.
-- Stores transactions, category trees, import jobs, and UI metadata locally in IndexedDB via Dexie.
-- Lets you classify transactions inline in the main table with direction-aware category choices.
-- Supports manual mirror grouping and ungrouping so duplicate cash movements do not double-count in analytics.
-- Supports manual accrual records for future payable or receivable items, then later manual settlement review against real cash transactions.
+- Stores transactions, category trees, import jobs, and UI metadata locally in
+  IndexedDB via Dexie.
+- Lets you classify transactions inline in the main table with direction-aware
+  category choices.
+- Supports manual mirror grouping and ungrouping so duplicate cash movements do
+  not double-count in analytics.
+- Supports manual accrual records for future payable or receivable items, then
+  later manual settlement review against real cash transactions.
 - Supports per-row amount spread analysis from the amount cell.
-- Includes charts for trend, category distribution, unified calendar heatmap, and category-by-time matrix.
+- Includes charts for trend, category distribution, unified calendar heatmap,
+  and category-by-time matrix.
 - Supports JSON backup export and full restore.
 
 ## Main Workflow
@@ -118,13 +128,17 @@ release/Finlyzer-1.0.0-windows-portable.exe
 
 ## Repository Notes
 
-- `.mcp-debug-shell/` is temporary local debug-shell output and should not be committed.
+- `.mcp-debug-shell/` is temporary local debug-shell output and should not be
+  committed.
 - Build output in `dist/` and packaged artifacts in `release/` are ignored.
-- The repository no longer carries a local `mcp-debug-shell` skill copy; use the global personal skill instead.
+- The repository no longer carries a local `mcp-debug-shell` skill copy; use the
+  global personal skill instead.
 
 ## Limitations
 
 - No cloud sync or collaboration.
 - Backup restore is strict to the current backup format.
-- Very large datasets may need future query/pagination optimization before storage capacity itself becomes a problem.
-- Bank import currently supports the known workbook layout already validated in this repo, not arbitrary bank formats.
+- Very large datasets may need future query/pagination optimization before
+  storage capacity itself becomes a problem.
+- Bank import currently supports the known workbook layout already validated in
+  this repo, not arbitrary bank formats.
